@@ -41,7 +41,7 @@ public class AuroraLambdaFunction implements RequestHandler<Object, String> {
             connection = DriverManager.getConnection(AURORA_DB_URL, AURORA_DB_USERNAME, AURORA_DB_PASSWORD);
 
             // Execute SQL query
-            String sql = "select codigo, descripcion from talento_demo.trv_propiedades limit 3";
+            String sql = "select codigo, descripcion from public.trv_propiedades limit 3";
             PreparedStatement statement = connection.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 
